@@ -9,23 +9,27 @@
 <body>
     <div id="app">
         <h1>{{ titulo }}</h1>
-        <div v-if="usuario.id == 1">
-            Id: {{ usuario.id }},<br>
-            Nome: {{ usuario.nome }},<br>
-            Profissão: {{ usuario.profissao }}
-        </div>
+        <ul>
+            <li v-for="(item, index) in linguagens">{{ index }} - {{ item.nome }} </li>
+        </ul>
+
     </div>
+
     <script src="https://unpkg.com/vue"></script>
-    <script>
+
+<script>
         var app =  new Vue({
             el: "#app",
             data: {
-                titulo:"Aula 01 - Vuejs do jeito ninja!",
-                usuario:{
-                    id : 1,
-                    nome: "Jon Snow",
-                    profissao: "Ator"
-                }
+                titulo:"Vuejs do jeito ninja",
+                linguagens:[
+                    { nome : "Javascript" },
+                    { nome: "PHP" },
+                    { nome: "C#"},
+                    { nome: "Java"},
+                    { nome : "Python"},
+                    { nome : "Delphi"}
+                ]
             }
         });
     </script>
